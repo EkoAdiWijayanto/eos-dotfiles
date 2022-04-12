@@ -251,6 +251,10 @@ bindsym $mod+a focus parent
 # open new empty workspace
 bindsym $mod+Shift+n exec ~/.config/i3/scripts/empty_workspace
 
+# pop dunst history
+
+bindsym $mod+m exec dunstctl history-pop
+
 # Multimedia Keys
 
 # volume
@@ -501,7 +505,7 @@ set $yellowbrown	#e1b700
 client.focused           #E0115F #E0115F #ffffff #E0115F   #14171e
 client.focused_inactive  #E0115F #E0115F #ffffff #E0115F   #14171e
 client.unfocused         #00A89D #00A89D #f5f5f5 #00A89D   #14171e
-focus_follows_mouse no
+focus_follows_mouse yes
 focus_on_window_activation focus
 
 
