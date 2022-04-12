@@ -3,5 +3,7 @@
 
 #A script to show current power profile
 
+declare -A profiles=( [performance]= [balanced]= [power-saver]= )
+
 current_profile=$(/usr/bin/powerprofilesctl get)
-echo "$current_profile"
+echo ${profiles[$current_profile]}
