@@ -23,7 +23,7 @@ exec --no-startup-id ~/set_once_i3.sh
 # is used in the bar {} block below.
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango: Source Code Pro Black 10
+font pango: Source Code Pro Black 16
 
 # set the mod key to the winkey:
 set $mod Mod4
@@ -410,7 +410,7 @@ exec --no-startup-id xset s 480 dpms 600 600 600
 #exec --no-startup-id xscreensaver --no-splash
 
 # Desktop notifications
-exec --no-startup-id dbus-launch dunst --config ~/.config/dunst/dunstrc
+exec-always --no-startup-id dbus-launch dunst --config ~/.config/dunst/dunstrc
 # alternative if you installed aside with XFCE4:
 # exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd &
 
@@ -517,7 +517,7 @@ focus_on_window_activation focus
 # Start i3bar to display a workspace bar
 # (plus the system information i3status finds out, if available)
 bar {
-		font pango: Source Code Pro Black 10
+		font pango: Source Code Pro Black 16
 		status_command i3blocks -c ~/.config/i3/i3blocks.conf
 	    	position top
 #	    	i3bar_command i3bar --transparency
@@ -584,7 +584,7 @@ strip_workspace_numbers yes
 #bindsym $mod+d exec rofi -modi drun -show drun \
 #		-config ~/.config/rofi/rofidmenu.rasi
 
-bindsym $mod+d exec j4-dmenu-desktop
+bindsym $mod+d exec j4-dmenu-desktop --dmenu "dmenu -i -fn 'Source Code Pro:pixelsize=24'"
 
 #bindsym F9 exec rofi -modi drun -show drun \
 #		-config ~/.config/rofi/rofidmenu.rasi
