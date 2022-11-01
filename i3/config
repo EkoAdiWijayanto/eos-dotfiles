@@ -198,8 +198,8 @@ bindsym F1 exec ~/.config/i3/scripts/keyhint-2
 # bindsym $mod+F1 exec xed ~/.config/i3/keybindings
 
 # Backlight control
-bindsym XF86MonBrightnessUp exec brightnessctl s 2%+ && notify-send "Brightness $(printf %.0f \"$((10**3 * $(brightnessctl g)/$(brightnessctl m) * 100))e-3\")"
-bindsym XF86MonBrightnessDown exec brightnessctl s 2%- && notify-send "Brightness $(printf %.0f \"$((10**3 * $(brightnessctl g)/$(brightnessctl m) * 100))e-3\")"
+bindsym XF86MonBrightnessUp exec brightnessctl s 2%+ && brightnessctl --save && notify-send "Brightness $(printf %.0f \"$((10**3 * $(brightnessctl g)/$(brightnessctl m) * 100))e-3\")"
+bindsym XF86MonBrightnessDown exec brightnessctl s 2%- && brightnessctl --save && notify-send "Brightness $(printf %.0f \"$((10**3 * $(brightnessctl g)/$(brightnessctl m) * 100))e-3\")"
 
 # change focus
 bindsym $mod+j focus left
@@ -437,6 +437,9 @@ exec --no-startup-id sleep 3 && blueberry-tray
 exec --no-startup-id alacritty --hold -e wallex-startup
 
 exec --no-startup-id alacritty indicator-sound-switcher
+
+exec --no-startup-id brightnessctl --restore
+
 ###############
 # system tray #
 ###############
